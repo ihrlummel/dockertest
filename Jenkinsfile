@@ -16,6 +16,17 @@ pipeline {
                 }
             }
         }
+
+        stage('Build Image'){
+            steps{
+                bat 'docker build -t test/testdocker:latest .'
+            }
+        }
+        stage('Run Container'){
+            steps{
+                bat 'docker container run -d -p 8080:8080 test/testdocker:latest'
+            }
+        }
     }
 }
 
