@@ -3,16 +3,17 @@ pipeline {
     tools {
         maven 'localMaven'
     }
-stages{
+    stages{
 
-    stage('Build'){
-        steps {
-            bat 'mvn clean package'
-        }
-        post {
-            success {
-                echo 'WTF...'
-                
+        stage('Build'){
+            steps {
+                bat 'mvn clean package'
+            }
+            post {
+                success {
+                    echo 'WTF...'
+                    
+                }
             }
         }
     }
