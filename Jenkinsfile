@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Run Container'){
             steps{
-                bat 'docker container run -d -p 8080:8080 test/testdocker:latest'
+                bat 'docker container run -d -p 7080:8080 test/testdocker:latest'
             }
         }
     }
